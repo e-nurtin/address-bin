@@ -1,0 +1,90 @@
+{
+  "John Smith": {
+    "zip code": "02321",
+    "phone number": "+02134564532",
+    "address": "Unknown",
+    "town": "Los Angeles",
+    "country": "USA",
+    "email": "johnsmith@mail.com"
+  },
+  "Hristo Stoichkov": {
+    "zip code": "1000",
+    "phone number": "+35999123513",
+    "address": "bul. Carigradsko Shose 222",
+    "town": "Sofia",
+    "country": "Bulgaria",
+    "email": "hristo.stoichkov@mail.bg"
+  },
+  "Christian Bale": {
+    "zip code": "33405",
+    "phone number": "+23144231123",
+    "address": "Unknown",
+    "town": "unknown",
+    "country": "USA",
+    "email": "balechristian@mail.com"
+  },
+  "Georgi Ivanov": {
+    "zip code": "2234",
+    "phone number": "012344551123",
+    "address": "no",
+    "town": "Pleven",
+    "country": "Bulgaria",
+    "email": ""
+  },
+  "Richard": {
+    "zip code": "77001",
+    "phone number": "+21356644432",
+    "address": "Miluake street 2443",
+    "town": "Houston",
+    "country": "USA",
+    "email": "richard.crooks@mail.com"
+  },
+  "Corey": {
+    "zip code": "00130",
+    "phone number": "00931231511233",
+    "address": "lala st no 222",
+    "town": "Helsinki",
+    "country": "Finland",
+    "email": "corey@hl.mail"
+  },
+  "James - Lebron": {
+    "zip code": "2231",
+    "phone number": "112312312312",
+    "address": "",
+    "town": "",
+    "country": "",
+    "email": ""
+  },
+  "Slash": {
+    "zip code": "0000",
+    "phone number": "121331451513",
+    "address": "",
+    "town": "",
+    "country": "",
+    "email": "slash.gibson@mail.com"
+  },
+  "John Frusciante": {
+    "zip code": "2213",
+    "phone number": "1233344433",
+    "address": "",
+    "town": "",
+    "country": "USA",
+    "email": ""
+  },
+  "DJ": {
+    "zip code": "223112",
+    "phone number": "2213333331",
+    "address": "",
+    "town": "",
+    "country": "",
+    "email": ""
+  },
+  "Andre Fleury": {
+    "zip code": "66526",
+    "phone number": "2235111312",
+    "address": "ALABAMA",
+    "town": "Point Clear",
+    "country": "USA",
+    "email": "andrefluery@gad.mail"
+  }
+}
