@@ -25,9 +25,8 @@ def valid_name(name):
     valid = re.match('([a-zA-Z]{2,}\s?)+', name)
     if valid:
         return True
-    else:
-        error_msg.set('Name must consist of at least 2 letters!')
-        return False
+    error_msg.set('Name must consist of at least 2 letters!')
+    return False
 
 
 def valid_zip(zip_code):
@@ -150,7 +149,7 @@ def copy_contact():
     root.clipboard_append(clipboard_msg)
 
 
-# This function clears all the entries after making sure they are entry widgets.
+# This function clears all the entries after checking if they are entry widgets.
 def clear_entries(*args):
     for widget in entry_frame.winfo_children():
         if isinstance(widget, ttk.Entry):
@@ -234,7 +233,7 @@ lb_frame = ttk.Frame(content, borderwidth=5, padding=(3, 3, 7, 7))
 list_box_var = StringVar(value=contacts)
 list_box = Listbox(lb_frame, height=10, listvariable=list_box_var, width=30)
 
-scrollbar = ttk.Scrollbar(lb_frame)
+scrollbar = ttk.Scrollbar(lb_frame, orient=VERTICAL, command=list_box.yview)
 
 edit_button = ttk.Button(lb_frame, text='Edit', command=edit_contact)
 copy_button = ttk.Button(lb_frame, text='Copy', command=copy_contact)
@@ -248,7 +247,7 @@ scrollbar.grid(columnspan=3, rowspan=5, row=0, column=0, sticky=(N, E, S))
 edit_button.grid(row=0, column=5, sticky=(W, E))
 copy_button.grid(row=1, column=5, sticky=(W, E))
 remove_button.grid(row=2, column=5, sticky=(W, E))
-
+list_box['yscrollcommand'] = scrollbar.set
 # Define information frame widgets
 info_frame = ttk.Frame(content, borderwidth=5)
 
@@ -280,7 +279,7 @@ email_info.grid(row=5, column=0, sticky=W)
 phone_info.grid(row=6, column=0, sticky=W)
 
 
-# Make the widgets grow if the window is resized
+# Make the widgets move if the window is resized
 content.columnconfigure(0, weight=1)
 content.rowconfigure(0, weight=1)
 content.columnconfigure(2, weight=3)
@@ -294,4 +293,5 @@ root.columnconfigure(2, weight=1)
 
 list_box.bind('<<ListboxSelect>>', show_info)
 save_button.bind('<Return>', validate_info)
+
 root.mainloop()
