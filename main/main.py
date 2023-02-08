@@ -1,5 +1,5 @@
 from tkinter import *
-from tkinter import ttk
+from tkinter import ttk, messagebox
 import re
 import json
 import os
@@ -14,7 +14,7 @@ try:
             data = json.load(file_path)
         for name in data.keys():
             contacts.append(name)
-except:
+except FileNotFoundError:
     with open('address_book_data.json', 'w') as file_path:
         file_path.write(json.dumps({}))
 
@@ -56,7 +56,7 @@ def validate_info(*args):
     phone = phone_entry.get()
     if valid_name(entry_name) and valid_zip(code) and valid_phone(phone):
         save_info(entry_name, code, phone)
-        error_msg.set('Contact Saved!')
+        messagebox.showinfo(message='Contact saved!')
     else:
         error_msg.set('Name, Zip and Phone Number must be filled to save!')
 
@@ -147,6 +147,7 @@ def copy_contact():
                      f'{zip_code.get()}\n{email.get()}\n{phone_number.get()}'
     root.clipboard_clear()
     root.clipboard_append(clipboard_msg)
+    messagebox.showinfo(message='Items copied to clipboard!')
 
 
 # This function clears all the entries after checking if they are entry widgets.
@@ -291,7 +292,8 @@ root.rowconfigure(0, weight=1)
 root.columnconfigure(0, weight=1)
 root.columnconfigure(2, weight=1)
 
+
 list_box.bind('<<ListboxSelect>>', show_info)
 save_button.bind('<Return>', validate_info)
-
+# print(root.tk.call('tk', 'windowingsystem'))
 root.mainloop()
